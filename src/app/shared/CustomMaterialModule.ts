@@ -1,8 +1,14 @@
-import { MdAutocompleteModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdTableModule } from '@angular/material';
 import { NgModule } from "@angular/core";
+import {
+    MdAutocompleteModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdInputModule, MdPaginatorModule,
+    MdSortModule,
+    MdTableModule
+} from "@angular/material";
 
 @NgModule({
-    imports: [MdAutocompleteModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdTableModule],
-    exports: [MdAutocompleteModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdTableModule],
+    imports: [MdAutocompleteModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdInputModule, MdPaginatorModule,
+              MdSortModule, MdTableModule],
+    exports: [MdAutocompleteModule, MdButtonModule, MdCheckboxModule, MdIconModule, MdInputModule, MdPaginatorModule,
+              MdSortModule, MdTableModule]
 })
 export class CustomMaterialModule { }

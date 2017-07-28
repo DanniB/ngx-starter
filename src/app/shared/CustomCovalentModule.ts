@@ -1,5 +1,5 @@
-import { CovalentLayoutModule, CovalentStepsModule } from '@covalent/core';
 import { NgModule } from "@angular/core";
+import { CovalentLayoutModule, CovalentStepsModule } from "@covalent/core";
 
 @NgModule({
     imports: [
@@ -8,7 +8,7 @@ import { NgModule } from "@angular/core";
     ],
     exports: [
         CovalentLayoutModule,
-        CovalentStepsModule,
+        CovalentStepsModule
     ]
 })
 export class CustomCovalentModule { }
