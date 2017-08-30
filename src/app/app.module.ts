@@ -2,9 +2,9 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 
-import { CdkTableModule } from "@angular/cdk";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CustomCovalentModule } from "./shared/CustomCovalentModule";
+import { MdTableModule } from '@angular/material';
+// import { CustomCovalentModule } from "./shared/CustomCovalentModule";
 import { CustomMaterialModule } from "./shared/CustomMaterialModule";
 import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
 
@@ -13,7 +13,7 @@ import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, CdkTableModule, CustomMaterialModule, CustomCovalentModule, CustomPrimeNgModule
+    BrowserModule, BrowserAnimationsModule, MdTableModule, CustomMaterialModule, /*CustomCovalentModule,*/ CustomPrimeNgModule
   ],
   providers: [],
   bootstrap: [AppComponent]

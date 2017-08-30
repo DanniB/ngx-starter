@@ -1,4 +1,4 @@
-import { DataSource } from "@angular/cdk";
+import { DataSource } from "@angular/cdk/collections";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { MdIconRegistry, MdPaginator, MdSort } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
