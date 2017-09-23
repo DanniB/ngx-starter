@@ -112,14 +112,14 @@ export class ExampleDataSource extends DataSource<any> {
     connect(): Observable<UserData[]> {
         const displayDataChanges = [
             this._exampleDatabase.dataChange,
-            this._sort.mdSortChange,
+            this._sort.sortChange,
             this._paginator.page,
             this._filterChange
         ];
 
         return Observable.merge(...displayDataChanges).map(() => {
             let data = this.getSortedData();
-            data = this._exampleDatabase.data.slice().filter((item: UserData) => {
+            data = data.slice().filter((item: UserData) => {
                 let searchStr = (item.name + item.color).toLowerCase();
                 return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
             });
