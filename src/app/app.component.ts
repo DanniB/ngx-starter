@@ -1,6 +1,6 @@
 import { DataSource } from "@angular/cdk/collections";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { MdIconRegistry, MdPaginator, MdSort } from "@angular/material";
+import { MatIconRegistry, MatPaginator, MatSort } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
 import "rxjs/add/observable/fromEvent";
 import "rxjs/add/observable/merge";
@@ -23,11 +23,11 @@ export class AppComponent implements OnInit {
     exampleDatabase = new ExampleDatabase();
     dataSource: ExampleDataSource | null;
 
-    @ViewChild(MdSort) sort: MdSort;
-    @ViewChild(MdPaginator) paginator: MdPaginator;
+    @ViewChild(MatSort) sort: MatSort;
+    @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild("filter") filter: ElementRef;
 
-    constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
+    constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
         iconRegistry.addSvgIcon(
             "thumbs-up",
             sanitizer.bypassSecurityTrustResourceUrl("assets/img/examples/thumbup-icon.svg"));
@@ -104,7 +104,7 @@ export class ExampleDataSource extends DataSource<any> {
     _filterChange = new BehaviorSubject("");
     get filter(): string { return this._filterChange.value; }
     set filter(filter: string) { this._filterChange.next(filter); }
-    constructor(private _exampleDatabase: ExampleDatabase, private _sort: MdSort, private _paginator: MdPaginator) {
+    constructor(private _exampleDatabase: ExampleDatabase, private _sort: MatSort, private _paginator: MatPaginator) {
         super();
     }
 
