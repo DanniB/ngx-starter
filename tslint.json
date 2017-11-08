@@ -4,10 +4,7 @@
   ],
   "rules": {
     // Angular 2 Codelyzer Standard Regeln
-
-    // TODO: Check if fix is corrected
-    // https://github.com/mgechev/codelyzer/issues/345
-    // "angular-whitespace": [true, "check-interpolation", "check-pipe"],
+    "angular-whitespace": [true, "check-interpolation", "check-semicolon"],
     "banana-in-box": true,
     "templates-no-negated-async": true,
     "directive-selector": [true, "attribute", "sg", "camelCase"],
@@ -25,9 +22,7 @@
     "pipe-naming": [true, "camelCase", "sg"],
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "templates-use-public": true,
-    "invoke-injectable": true,
-    "template-to-ng-template": true,
+    "pipe-impure": true,
 
     // Custom Lint Regeln (https://palantir.github.io/tslint/rules/)
     // Signaturen hintereinander

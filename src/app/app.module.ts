@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-// import { CustomCovalentModule } from "./shared/CustomCovalentModule";
+import { CustomCovalentModule } from "./shared/CustomCovalentModule";
 import { CustomMaterialModule } from "./shared/CustomMaterialModule";
 import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
 
@@ -12,7 +12,7 @@ import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, CustomMaterialModule, /*CustomCovalentModule,*/ CustomPrimeNgModule
+    BrowserModule, BrowserAnimationsModule, CustomMaterialModule, CustomCovalentModule, CustomPrimeNgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
