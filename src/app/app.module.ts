@@ -12,7 +12,8 @@ import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, CustomMaterialModule, CustomCovalentModule, CustomPrimeNgModule
+      //TODO: Update Covalent to fit Material 5
+    BrowserModule, BrowserAnimationsModule, CustomMaterialModule, /*CustomCovalentModule,*/ CustomPrimeNgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
