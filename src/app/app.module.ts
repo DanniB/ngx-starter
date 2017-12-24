@@ -12,7 +12,7 @@ import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
     AppComponent
   ],
   imports: [
-      //TODO: Update Covalent to fit Material 5
+    // TODO: Update Covalent to fit Material 5
     BrowserModule, BrowserAnimationsModule, CustomMaterialModule, /*CustomCovalentModule,*/ CustomPrimeNgModule
   ],
   providers: [],

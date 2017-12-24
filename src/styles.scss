@@ -5,7 +5,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome';
 
 // Import Flag Icons
-$flag-icon-css-path: '~flag-icon-css/flags' !default;
+$flag-icon-css-path: '~flag-icon-css/flags';
 @import "~flag-icon-css/sass/flag-icon";
 
 // Import Material Theme

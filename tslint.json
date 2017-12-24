@@ -16,8 +16,11 @@
     "no-attribute-parameter-decorator": true,
     "no-input-rename": true,
     "no-output-rename": true,
+    "no-output-on-prefix": true,
     "no-forward-ref": true,
     "use-life-cycle-interface": true,
+    "contextual-life-cycle": true,
+    "trackBy-function": true,
     "use-pipe-transform-interface": true,
     "pipe-naming": [true, "camelCase", "sg"],
     "component-class-suffix": true,
@@ -56,9 +59,9 @@
       true,
       150
     ],
-    "max-file-line-count": [true, 1000],
+    "max-file-line-count": [true, 5000],
     //  Sichtbarkeit explizit in allen Klassenteilen angeben
-    "member-access": false,
+    "member-access": [true, "no-public"],
     // Reihenfolge der Klassenteile (Variablen, Funktionen, etc)
     "member-ordering": [
       true,
@@ -87,19 +90,28 @@
     "no-construct": true,
     // Verbietet Debugger-Statements
     "no-debugger": true,
+    // Keine Duplikate bei Imports
+    "no-duplicate-imports": true,
     // Keine Duplikate bei Variablen
     "no-duplicate-variable": true,
-    // Keine Duplikate bei super calls
     // Keine Duplikate bei super calls
     "no-duplicate-super": true,
     // Verbietet leere Blöcke
     "no-empty": false,
+    // Identische Switch-cases nicht erlaubt
+    "no-duplicate-switch-case": true,
     // Ausführung der JS Eval-Funktion
     "no-eval": true,
+    // Erlaubt nur Import von Dependencies aus Package.json
+    "no-implicit-dependencies": false,
     // Verbietet explizite Typdaklarationen für Variablen oder Paramter von primitiven Datentypen (number, string, or boolean).
     "no-inferrable-types": true,
-    // Verbietet interne Module (forciert Namespaces).
+    // Verbietet interne Module (forciert Namespaces)
     "no-internal-module": true,
+    // Parameter dürfen nur einem zugewiesen werden
+    "no-parameter-reassignment": false,
+    // Keine unnötiges Warten auf return
+    "no-return-await": true,
     // Verbietet Schattenvariablen
     "no-shadowed-variable": true,
     // Kein Objektzugriff über Stringliterale
@@ -132,7 +144,7 @@
     // Sortiere Imports
     "ordered-imports": true,
     // Nutze konditionale Ausdrücke anstelle von multiple ifs
-    "prefer-conditional-expression": true,
+    "prefer-conditional-expression": false,
     // Nutze for-of Loops, einfacher lesbar
     "prefer-for-of": true,
     // Nutze switch-case-Anweisungen, wenn mehr als 3 Fälle unterschieden werden
