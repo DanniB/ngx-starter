@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build": "ng build",
-    "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
-    "format:fix": "prettier --config ./.prettierrc --write \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "format:check": "prettier --config ./.prettierrc --list-different \"src/**/*{.ts,.js,.json,.css,.scss}\"",
+    "format:fix": "prettier --config ./.prettierrc --write \"src/**/*{.ts,.js,.json,.css,.scss}\"",
     "lint": "tslint --fix --project src/tsconfig.app.json",
     "lint:check": "tslint-config-prettier-check ./tslint.json",
     "ng": "ng",

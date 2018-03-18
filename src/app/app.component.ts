@@ -12,9 +12,9 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { Observable } from "rxjs/Observable";
 
 @Component({
-  selector: "sg-app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+    selector: "sg-app-root",
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
     title = "app";
@@ -30,8 +30,8 @@ export class AppComponent implements OnInit {
     constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
         iconRegistry.addSvgIcon(
             "thumbs-up",
-            sanitizer.bypassSecurityTrustResourceUrl("assets/img/examples/thumbup-icon.svg"));
-
+            sanitizer.bypassSecurityTrustResourceUrl("assets/img/examples/thumbup-icon.svg")
+        );
     }
 
     ngOnInit() {
@@ -40,18 +40,53 @@ export class AppComponent implements OnInit {
             .debounceTime(150)
             .distinctUntilChanged()
             .subscribe(() => {
-                if (!this.dataSource) { return; }
+                if (!this.dataSource) {
+                    return;
+                }
                 this.dataSource.filter = this.filter.nativeElement.value;
             });
     }
 }
 
-    /** Constants used to fill up our data base. */
-const COLORS = ["maroon", "red", "orange", "yellow", "olive", "green", "purple",
-                "fuchsia", "lime", "teal", "aqua", "blue", "navy", "black", "gray"];
-const NAMES = ["Maia", "Asher", "Olivia", "Atticus", "Amelia", "Jack",
-               "Charlotte", "Theodore", "Isla", "Oliver", "Isabella", "Jasper",
-               "Cora", "Levi", "Violet", "Arthur", "Mia", "Thomas", "Elizabeth"];
+/** Constants used to fill up our data base. */
+const COLORS = [
+    "maroon",
+    "red",
+    "orange",
+    "yellow",
+    "olive",
+    "green",
+    "purple",
+    "fuchsia",
+    "lime",
+    "teal",
+    "aqua",
+    "blue",
+    "navy",
+    "black",
+    "gray"
+];
+const NAMES = [
+    "Maia",
+    "Asher",
+    "Olivia",
+    "Atticus",
+    "Amelia",
+    "Jack",
+    "Charlotte",
+    "Theodore",
+    "Isla",
+    "Oliver",
+    "Isabella",
+    "Jasper",
+    "Cora",
+    "Levi",
+    "Violet",
+    "Arthur",
+    "Mia",
+    "Thomas",
+    "Elizabeth"
+];
 
 export interface UserData {
     id: string;
@@ -64,11 +99,15 @@ export interface UserData {
 export class ExampleDatabase {
     /** Stream that emits whenever the data has been modified. */
     dataChange: BehaviorSubject<UserData[]> = new BehaviorSubject<UserData[]>([]);
-    get data(): UserData[] { return this.dataChange.value; }
+    get data(): UserData[] {
+        return this.dataChange.value;
+    }
 
     constructor() {
         // Fill up the database with 100 users.
-        for (let i = 0; i < 100; i++) { this.addUser(); }
+        for (let i = 0; i < 100; i++) {
+            this.addUser();
+        }
     }
 
     /** Adds a new user to the database. */
@@ -80,8 +119,7 @@ export class ExampleDatabase {
 
     /** Builds and returns a new User. */
     private createNewUser() {
-        const name =
-        `${NAMES[Math.round(Math.random() * (NAMES.length - 1))]}
+        const name = `${NAMES[Math.round(Math.random() * (NAMES.length - 1))]}
          ${NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0)}.`;
 
         return {
@@ -102,8 +140,12 @@ export class ExampleDatabase {
  */
 export class ExampleDataSource extends DataSource<any> {
     _filterChange = new BehaviorSubject("");
-    get filter(): string { return this._filterChange.value; }
-    set filter(filter: string) { this._filterChange.next(filter); }
+    get filter(): string {
+        return this._filterChange.value;
+    }
+    set filter(filter: string) {
+        this._filterChange.next(filter);
+    }
     constructor(private _exampleDatabase: ExampleDatabase, private _sort: MatSort, private _paginator: MatPaginator) {
         super();
     }
@@ -135,17 +177,27 @@ export class ExampleDataSource extends DataSource<any> {
     /** Returns a sorted copy of the database data. */
     getSortedData(): UserData[] {
         const data = this._exampleDatabase.data.slice();
-        if (!this._sort.active || this._sort.direction === "") { return data; }
+        if (!this._sort.active || this._sort.direction === "") {
+            return data;
+        }
 
         return data.sort((a, b) => {
-            let propertyA: number|string = "";
-            let propertyB: number|string = "";
+            let propertyA: number | string = "";
+            let propertyB: number | string = "";
 
             switch (this._sort.active) {
-                case "userId": [propertyA, propertyB] = [a.id, b.id]; break;
-                case "userName": [propertyA, propertyB] = [a.name, b.name]; break;
-                case "progress": [propertyA, propertyB] = [a.progress, b.progress]; break;
-                case "color": [propertyA, propertyB] = [a.color, b.color]; break;
+                case "userId":
+                    [propertyA, propertyB] = [a.id, b.id];
+                    break;
+                case "userName":
+                    [propertyA, propertyB] = [a.name, b.name];
+                    break;
+                case "progress":
+                    [propertyA, propertyB] = [a.progress, b.progress];
+                    break;
+                case "color":
+                    [propertyA, propertyB] = [a.color, b.color];
+                    break;
             }
 
             const valueA = isNaN(+propertyA) ? propertyA : +propertyA;
