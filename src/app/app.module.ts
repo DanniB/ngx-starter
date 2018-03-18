@@ -10,11 +10,11 @@ import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
 @NgModule({
     declarations: [AppComponent],
     imports: [
-        // TODO: Update Covalent to fit Material 5
         BrowserModule,
         BrowserAnimationsModule,
         CustomMaterialModule,
-        /*CustomCovalentModule,*/ CustomPrimeNgModule
+        CustomCovalentModule,
+        CustomPrimeNgModule
     ],
     providers: [],
     bootstrap: [AppComponent]
