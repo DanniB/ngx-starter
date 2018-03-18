@@ -2,18 +2,19 @@
 
 // Import Font Awesome
 $fa-font-path: "../node_modules/@fortawesome/fontawesome-free-webfonts/webfonts";
+
 @import "../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
 @import "../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
 
 // Import Flag Icons
-$flag-icon-css-path: '~flag-icon-css/flags';
+$flag-icon-css-path: "~flag-icon-css/flags";
+
 @import "~flag-icon-css/sass/flag-icon";
 
 // Import Material Theme
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-@import '~@angular/material/theming';
-@import '~@covalent/core/theming/all-theme';
+@import "~@angular/material/theming";
+@import "~@covalent/core/theming/all-theme";
 
 @include mat-core();
 
