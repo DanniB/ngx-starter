@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+/documentation
 
 # DEV API Packages
 /dev-api/node_modules
