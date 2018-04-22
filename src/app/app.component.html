@@ -1,10 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="text-center">
   <h1>
-    Welcome to {{ title }}!! <i class="flag flag-icon flag-icon-de "></i>
+    <ng-container i18n="@@WelcomeTitle"> Welcome to {{ title }}!!</ng-container>
+    <i class="flag flag-icon flag-icon-de"></i>
   </h1>
 </div>
-<h2><span i18n>Data Table <i class="fas fa-table"></i></span></h2>
+<h2><span i18n="@@DataTable">Data Table <i class="fas fa-table"></i></span></h2>
 <div class="example-container mat-elevation-z8">
   <div class="example-header">
     <mat-form-field floatPlaceholder="never">
@@ -19,25 +20,33 @@
 
     <!-- ID Column -->
     <ng-container matColumnDef="userId">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        <ng-container i18n="@@Id"> ID </ng-container>
+      </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
     </ng-container>
 
     <!-- Progress Column -->
     <ng-container matColumnDef="progress">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        <ng-container i18n="@@Progress"> Progress </ng-container>
+      </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{ row.progress }}% </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="userName">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        <ng-container i18n="@@Name"> Name </ng-container>
+      </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
     </ng-container>
 
     <!-- Color Column -->
     <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        <ng-container i18n="@@Color"> Color </ng-container>
+      </mat-header-cell>
       <mat-cell *matCellDef="let row" [style.color]="row.color"> {{ row.color }} </mat-cell>
     </ng-container>
 

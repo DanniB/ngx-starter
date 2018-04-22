@@ -17,7 +17,7 @@ import { Observable } from "rxjs/Observable";
     styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-    title = "app";
+    title = "Data Table Test App";
 
     displayedColumns = ["userId", "userName", "progress", "color"];
     exampleDatabase = new ExampleDatabase();

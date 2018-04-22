@@ -9,23 +9,31 @@
     "templates-no-negated-async": true,
     "directive-selector": [true, "attribute", "sg", "camelCase"],
     "component-selector": [true, "element", "sg", "kebab-case"],
+    "max-inline-declarations": true,
+    "prefer-output-readonly": true,
+    "no-conflicting-life-cycle-hooks": true,
+    "enforce-component-selector": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
     "use-view-encapsulation": true,
     "no-attribute-parameter-decorator": true,
+    "no-output-named-after-standard-event": true,
     "no-input-rename": true,
     "no-output-rename": true,
     "no-output-on-prefix": true,
     "no-forward-ref": true,
+    "no-unused-css": true,
     "use-life-cycle-interface": true,
     "contextual-life-cycle": true,
     "trackBy-function": true,
     "use-pipe-transform-interface": true,
-    "pipe-naming": [true, "camelCase", "sg"],
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "pipe-impure": true,
+    "i18n": [true, "check-id", "check-text"],
+    "template-cyclomatic-complexity": [true, 5],
+    "template-conditional-complexity": [true, 4],
 
     // Custom Lint Regeln (https://palantir.github.io/tslint/rules/)
     // Signaturen hintereinander
@@ -111,8 +119,6 @@
     "no-var-keyword": true,
     // Verbietet Nutzung von requires (forciert ES6 imports)
     "no-var-requires": true,
-    // Objekt Literale mit "" nur falls nötig
-    "object-literal-key-quotes": [true, "as-needed"],
     // Sortiere Imports
     "ordered-imports": true,
     // Nutze konditionale Ausdrücke anstelle von multiple ifs

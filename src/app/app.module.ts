@@ -9,13 +9,7 @@ import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        CustomMaterialModule,
-        CustomCovalentModule,
-        CustomPrimeNgModule
-    ],
+    imports: [BrowserModule, BrowserAnimationsModule, CustomMaterialModule, CustomCovalentModule, CustomPrimeNgModule],
     providers: [],
     bootstrap: [AppComponent]
 })
