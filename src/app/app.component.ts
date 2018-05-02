@@ -1,17 +1,9 @@
-
-import {merge as observableMerge, fromEvent as observableFromEvent,  BehaviorSubject ,  Observable } from 'rxjs';
-
-import {debounceTime, map, distinctUntilChanged} from 'rxjs/operators';
 import { DataSource } from "@angular/cdk/collections";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { MatIconRegistry, MatPaginator, MatSort } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
-import "rxjs/add/observable/fromEvent";
-import "rxjs/add/observable/merge";
-import "rxjs/add/operator/debounceTime";
-import "rxjs/add/operator/distinctUntilChanged";
-import "rxjs/add/operator/map";
-import "rxjs/add/operator/startWith";
+import { BehaviorSubject, fromEvent as observableFromEvent,  merge as observableMerge ,  Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
     selector: "sg-app-root",
