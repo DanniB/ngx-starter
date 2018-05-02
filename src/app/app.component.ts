@@ -1,3 +1,7 @@
+
+import {merge as observableMerge, fromEvent as observableFromEvent,  BehaviorSubject ,  Observable } from 'rxjs';
+
+import {debounceTime, map, distinctUntilChanged} from 'rxjs/operators';
 import { DataSource } from "@angular/cdk/collections";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { MatIconRegistry, MatPaginator, MatSort } from "@angular/material";
@@ -8,8 +12,6 @@ import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/distinctUntilChanged";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/startWith";
-import { BehaviorSubject } from "rxjs/BehaviorSubject";
-import { Observable } from "rxjs/Observable";
 
 @Component({
     selector: "sg-app-root",
@@ -36,9 +38,9 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.dataSource = new ExampleDataSource(this.exampleDatabase, this.sort, this.paginator);
-        Observable.fromEvent(this.filter.nativeElement, "keyup")
-            .debounceTime(150)
-            .distinctUntilChanged()
+        observableFromEvent(this.filter.nativeElement, "keyup").pipe(
+            debounceTime(150),
+            distinctUntilChanged(),)
             .subscribe(() => {
                 if (!this.dataSource) {
                     return;
@@ -159,7 +161,7 @@ export class ExampleDataSource extends DataSource<any> {
             this._filterChange
         ];
 
-        return Observable.merge(...displayDataChanges).map(() => {
+        return observableMerge(...displayDataChanges).pipe(map(() => {
             let data = this.getSortedData();
             data = data.slice().filter((item: UserData) => {
                 const searchStr = (item.name + item.color).toLowerCase();
@@ -169,7 +171,7 @@ export class ExampleDataSource extends DataSource<any> {
             // Grab the page's slice of data.
             const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
             return data.splice(startIndex, this._paginator.pageSize);
-        });
+        }));
     }
 
     disconnect() {}
