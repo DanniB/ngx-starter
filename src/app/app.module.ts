@@ -9,8 +9,8 @@ import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
 
 @NgModule({
     declarations: [AppComponent],
-    // Insert CustomCovalentModule after angular 6 support is offered
-    imports: [BrowserModule, BrowserAnimationsModule, CustomMaterialModule, CustomPrimeNgModule],
+    // Insert CustomCovalentModule, CustomPrimeNgModule after angular 6 support is offered
+    imports: [BrowserModule, BrowserAnimationsModule, CustomMaterialModule],
     providers: [],
     bootstrap: [AppComponent]
 })

@@ -20,6 +20,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "0.5.13",
     "@angular/animations": "6.0.0-rc.6",
     "@angular/cdk": "6.0.0-rc.14",
     "@angular/common": "6.0.0-rc.6",
@@ -57,7 +58,6 @@
     "primeng": "5.2.5",
     "reflect-metadata": "0.1.12",
     "rxjs": "6.0.0",
-    "rxjs-compat": "6.0.0",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
@@ -66,8 +66,7 @@
     "@angular/language-service": "6.0.0-rc.6",
     "@compodoc/compodoc": "1.1.2",
     "@types/jasmine": "2.8.6",
-    "@types/node": "10.0.2",
-    "bootstrap-sass": "3.3.7",
+    "@types/node": "10.0.3",
     "codelyzer": "4.3.0",
     "concurrently": "3.5.1",
     "jasmine-core": "3.1.0",
@@ -77,7 +76,7 @@
     "karma-chrome-launcher": "2.2.0",
     "karma-cli": "1.0.1",
     "karma-coverage-istanbul-reporter": "1.4.2",
-    "karma-jasmine": "1.1.1",
+    "karma-jasmine": "1.1.2",
     "karma-jasmine-html-reporter": "1.0.0",
     "lite-server": "2.3.0",
     "modernizr": "3.6.0",
@@ -91,7 +90,6 @@
     "tslint": "5.9.1",
     "tslint-config-prettier": "1.12.0",
     "typescript": "2.7.2",
-    "webdriver-manager": "12.0.6",
-    "@angular-devkit/build-angular": "~0.5.12"
+    "webdriver-manager": "12.0.6"
   }
 }
