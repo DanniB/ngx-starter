@@ -125,6 +125,8 @@
     "prefer-conditional-expression": false,
     // Nutze for-of Loops, einfacher lesbar
     "prefer-for-of": true,
+    // Nutze while anstelle von bspw. for(true)
+    "prefer-while": true,
     // Nutze switch-case-Anweisungen, wenn mehr als 3 Fälle unterschieden werden
     "prefer-switch": true,
     // Keine Nutzung von Concat mit x>2 strings
