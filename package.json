@@ -7,16 +7,17 @@
     "doc:build": "compodoc -p src/tsconfig.app.json --theme 'material'",
     "doc:serve": "compodoc -s",
     "doc:buildandserve": "compodoc -p src/tsconfig.app.json --theme 'material' -s",
+    "e2e": "ng e2e",
     "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
     "format:fix": "prettier --config ./.prettierrc --write \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
     "lint": "tslint --fix --project src/tsconfig.app.json",
     "lint:check": "tslint-config-prettier-check ./tslint.json",
+    "modernizr": "modernizr -uc modernizr-config.json -d modernizr-custom.min.js",
     "ng": "ng",
     "start": "ng serve --open",
     "stylelint": "stylelint --fix '**/*.scss' --syntax scss",
     "test": "ng test",
-    "test:all": "concurrently --kill-others-on-fail 'npm run lint' 'npm run stylelint' 'npm run test'",
-    "e2e": "ng e2e"
+    "test:all": "concurrently --kill-others-on-fail 'npm run lint' 'npm run stylelint' 'npm run test'"
   },
   "private": true,
   "dependencies": {
