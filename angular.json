@@ -36,7 +36,8 @@
               "node_modules/moment/min/moment.min.js",
               "node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
               "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "node_modules/clarity-icons/clarity-icons.min.js"
+              "node_modules/clarity-icons/clarity-icons.min.js",
+              "./modernizr-custom.min.js"
             ]
           },
           "configurations": {
@@ -89,7 +90,8 @@
               "node_modules/moment/min/moment.min.js",
               "node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
               "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "node_modules/clarity-icons/clarity-icons.min.js"
+              "node_modules/clarity-icons/clarity-icons.min.js",
+              "./modernizr-custom.min.js"
             ],
             "styles": [
               "src/styles.scss",
