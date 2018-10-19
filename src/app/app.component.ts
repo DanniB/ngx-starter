@@ -2,8 +2,8 @@ import { DataSource } from "@angular/cdk/collections";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { MatIconRegistry, MatPaginator, MatSort } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
-import { BehaviorSubject, fromEvent as observableFromEvent,  merge as observableMerge ,  Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { BehaviorSubject, fromEvent as observableFromEvent, merge as observableMerge, Observable } from "rxjs";
+import { debounceTime, distinctUntilChanged, map } from "rxjs/operators";
 
 @Component({
     selector: "sg-app-root",
@@ -30,9 +30,11 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.dataSource = new ExampleDataSource(this.exampleDatabase, this.sort, this.paginator);
-        observableFromEvent(this.filter.nativeElement, "keyup").pipe(
-            debounceTime(150),
-            distinctUntilChanged(),)
+        observableFromEvent(this.filter.nativeElement, "keyup")
+            .pipe(
+                debounceTime(150),
+                distinctUntilChanged()
+            )
             .subscribe(() => {
                 if (!this.dataSource) {
                     return;
@@ -153,17 +155,19 @@ export class ExampleDataSource extends DataSource<any> {
             this._filterChange
         ];
 
-        return observableMerge(...displayDataChanges).pipe(map(() => {
-            let data = this.getSortedData();
-            data = data.slice().filter((item: UserData) => {
-                const searchStr = (item.name + item.color).toLowerCase();
-                return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
-            });
+        return observableMerge(...displayDataChanges).pipe(
+            map(() => {
+                let data = this.getSortedData();
+                data = data.slice().filter((item: UserData) => {
+                    const searchStr = (item.name + item.color).toLowerCase();
+                    return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
+                });
 
-            // Grab the page's slice of data.
-            const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
-            return data.splice(startIndex, this._paginator.pageSize);
-        }));
+                // Grab the page's slice of data.
+                const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
+                return data.splice(startIndex, this._paginator.pageSize);
+            })
+        );
     }
 
     disconnect() {}

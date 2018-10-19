@@ -71,14 +71,9 @@
     // Keine Bitweise Operatoren
     "no-bitwise": true,
     // Verbiete bestimmte Funktionen der Konsole
-    /*"no-console": [
-        true,
-        "debug",
-        "info",
-        "time",
-        "timeEnd",
-        "trace"
-    ],*/
+    "no-console": [
+        true
+    ],
     // Konditionale Zuweisungen werden vermieden bspw: if(var1 = var2), Typo vermeiden
     "no-conditional-assignment": true,
     // Verbietet Zugriff auf Konstruktoren von primitiven Datentypen ( String, Number, and Boolean)
@@ -110,7 +105,7 @@
     // Verbietet Schattenvariablen
     "no-shadowed-variable": true,
     // Kein Objektzugriff über Stringliterale
-    "no-string-literal": false,
+    "no-string-literal": true,
     // Kein Durchfallen bei Switch-Case-Fällen (ein Fall muss gewählt sein)
     "no-switch-case-fall-through": true,
     // Keine unbenutzten Ausdrücke
