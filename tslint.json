@@ -87,19 +87,15 @@
     // Keine Duplikate bei super calls
     "no-duplicate-super": true,
     // Verbietet leere Blöcke
-    "no-empty": false,
+    "no-empty": true,
     // Identische Switch-cases nicht erlaubt
     "no-duplicate-switch-case": true,
     // Ausführung der JS Eval-Funktion
     "no-eval": true,
-    // Erlaubt nur Import von Dependencies aus Package.json
-    "no-implicit-dependencies": false,
     // Verbietet explizite Typdaklarationen für Variablen oder Paramter von primitiven Datentypen (number, string, or boolean).
     "no-inferrable-types": true,
     // Verbietet interne Module (forciert Namespaces)
     "no-internal-module": true,
-    // Parameter dürfen nur einem zugewiesen werden
-    "no-parameter-reassignment": false,
     // Keine unnötiges Warten auf return
     "no-return-await": true,
     // Verbietet Schattenvariablen
@@ -118,8 +114,6 @@
     "no-var-requires": true,
     // Sortiere Imports
     "ordered-imports": true,
-    // Nutze konditionale Ausdrücke anstelle von multiple ifs
-    "prefer-conditional-expression": false,
     // Nutze for-of Loops, einfacher lesbar
     "prefer-for-of": true,
     // Nutze while anstelle von bspw. for(true)
