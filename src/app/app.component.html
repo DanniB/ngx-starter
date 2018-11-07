@@ -1,63 +1,67 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced. -->
 <div class="text-center">
-  <h1>
-    <ng-container i18n="@@WelcomeTitle"> Welcome to {{ title }}!!</ng-container>
-    <i class="flag flag-icon flag-icon-de"></i>
-  </h1>
+    <h1>
+        <ng-container i18n="@@WelcomeTitle"> Welcome to {{ title }}!!</ng-container>
+        <i class="flag flag-icon flag-icon-de"></i>
+    </h1>
 </div>
-<h2><span i18n="@@DataTable">Data Table <i class="fas fa-table"></i></span></h2>
+<h2>
+    <span i18n="@@DataTable">Data Table <i class="fas fa-table"></i></span>
+</h2>
 <div class="example-container mat-elevation-z8">
-  <div class="example-header">
-    <mat-form-field floatPlaceholder="never">
-      <input matInput #filter placeholder="Filter users">
-    </mat-form-field>
-  </div>
+    <div class="example-header">
+        <mat-form-field floatPlaceholder="never">
+            <input matInput #filter placeholder="Filter users" />
+        </mat-form-field>
+    </div>
 
-  <mat-table #table [dataSource]="dataSource" matSort>
+    <mat-table #table [dataSource]="dataSource" matSort>
+        <!--
+            - Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition"
+        -->
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+        <!-- ID Column -->
+        <ng-container matColumnDef="userId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+                <ng-container i18n="@@Id"> ID </ng-container>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+        </ng-container>
 
-    <!-- ID Column -->
-    <ng-container matColumnDef="userId">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
-        <ng-container i18n="@@Id"> ID </ng-container>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
-    </ng-container>
+        <!-- Progress Column -->
+        <ng-container matColumnDef="progress">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+                <ng-container i18n="@@Progress"> Progress </ng-container>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.progress }}% </mat-cell>
+        </ng-container>
 
-    <!-- Progress Column -->
-    <ng-container matColumnDef="progress">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
-        <ng-container i18n="@@Progress"> Progress </ng-container>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{ row.progress }}% </mat-cell>
-    </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+                <ng-container i18n="@@Name"> Name </ng-container>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+        </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="userName">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
-        <ng-container i18n="@@Name"> Name </ng-container>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
-    </ng-container>
+        <!-- Color Column -->
+        <ng-container matColumnDef="color">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+                <ng-container i18n="@@Color"> Color </ng-container>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color"> {{ row.color }} </mat-cell>
+        </ng-container>
 
-    <!-- Color Column -->
-    <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
-        <ng-container i18n="@@Color"> Color </ng-container>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{ row.color }} </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-  <mat-paginator #paginator
-                [length]="exampleDatabase.data.length"
-                [pageIndex]="0"
-                [pageSize]="25"
-                [pageSizeOptions]="[5, 10, 25, 100]">
-  </mat-paginator>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <mat-paginator
+        #paginator
+        [length]="exampleDatabase.data.length"
+        [pageIndex]="0"
+        [pageSize]="25"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+    >
+    </mat-paginator>
 </div>
-
