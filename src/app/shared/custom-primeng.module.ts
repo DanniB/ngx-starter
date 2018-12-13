@@ -5,4 +5,4 @@ import { ButtonModule, DataTableModule, SharedModule } from "primeng/primeng";
     imports: [ButtonModule, DataTableModule, SharedModule],
     exports: [ButtonModule, DataTableModule, SharedModule]
 })
-export class CustomPrimeNgModule {}
+export class CustomPrimengModule {}

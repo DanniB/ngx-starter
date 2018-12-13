@@ -20,24 +20,24 @@
               "src/assets",
               "src/favicon.ico"
             ],
-            "styles": [
-              "src/styles.scss",
-              "node_modules/clarity-icons/clarity-icons.min.css",
-              "node_modules/clarity-ui/clarity-ui.min.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeng/resources/themes/omega/theme.css",
-              "node_modules/@covalent/core/common/platform.scss",
-              "node_modules/bootstrap/scss/bootstrap.scss"
-
-            ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/moment/min/moment.min.js",
               "node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
               "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "node_modules/clarity-icons/clarity-icons.min.js",
+              "node_modules/@clr/icons/clr-icons.min.js",
               "./modernizr-custom.min.js"
+            ],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeng/resources/themes/omega/theme.css",
+              "node_modules/@covalent/core/common/platform.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss"
+
             ]
           },
           "configurations": {
@@ -90,13 +90,13 @@
               "node_modules/moment/min/moment.min.js",
               "node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
               "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "node_modules/clarity-icons/clarity-icons.min.js",
+              "node_modules/@clr/icons/clr-icons.min.js",
               "./modernizr-custom.min.js"
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/clarity-icons/clarity-icons.min.css",
-              "node_modules/clarity-ui/clarity-ui.min.css",
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeng/resources/themes/omega/theme.css",
               "node_modules/@covalent/core/common/platform.scss",

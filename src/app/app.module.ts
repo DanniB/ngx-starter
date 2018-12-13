@@ -1,16 +1,12 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
-
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CustomCovalentModule } from "./shared/CustomCovalentModule";
-import { CustomMaterialModule } from "./shared/CustomMaterialModule";
-import { CustomPrimeNgModule } from "./shared/CustomPrimeNgModule";
+import { AppComponent } from "./app.component";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
     declarations: [AppComponent],
-    // Insert CustomCovalentModule, CustomPrimeNgModule after angular 6 support is offered
-    imports: [BrowserModule, BrowserAnimationsModule, CustomMaterialModule],
+    imports: [BrowserModule, BrowserAnimationsModule, SharedModule],
     providers: [],
     bootstrap: [AppComponent]
 })
