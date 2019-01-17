@@ -101,7 +101,7 @@ export class ExampleDatabase {
 
     constructor() {
         // Fill up the database with 100 users.
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 100; i += 1) {
             this.addUser();
         }
     }
