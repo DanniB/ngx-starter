@@ -1,66 +1,18 @@
-<!-- The content below is only a placeholder and can be replaced. -->
-<div class="text-center">
-    <h1>
-        <ng-container i18n="@@WelcomeTitle"> Welcome to {{ title }}!!</ng-container>
-    </h1>
-</div>
-<h2>
-    <span i18n="@@DataTable">Data Table <i class="fas fa-table"></i><span class="flag-icon flag-icon-de"></span></span>
-</h2>
-<div class="example-container mat-elevation-z8">
-    <div class="example-header">
-        <mat-form-field floatPlaceholder="never">
-            <input matInput #filter placeholder="Filter users" />
-        </mat-form-field>
-    </div>
+<form class="d-flex justify-content-center align-content-center mt-3">
+    <mat-form-field class="pr-3">
+        <input matInput placeholder="Max cols" #maxColsIn (change)="updateCols(maxColsIn.value)" />
+    </mat-form-field>
 
-    <mat-table #table [dataSource]="dataSource" matSort>
-        <!--
-            - Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition"
-        -->
+    <mat-form-field>
+        <input matInput placeholder="Max card rows" #cardMaxRowsIn (change)="updateCardMaxRows(cardMaxRowsIn.value)" />
+    </mat-form-field>
+</form>
 
-        <!-- ID Column -->
-        <ng-container matColumnDef="userId">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>
-                <ng-container i18n="@@Id"> ID </ng-container>
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
-        </ng-container>
-
-        <!-- Progress Column -->
-        <ng-container matColumnDef="progress">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>
-                <ng-container i18n="@@Progress"> Progress </ng-container>
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.progress }}% </mat-cell>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="userName">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>
-                <ng-container i18n="@@Name"> Name </ng-container>
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
-        </ng-container>
-
-        <!-- Color Column -->
-        <ng-container matColumnDef="color">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>
-                <ng-container i18n="@@Color"> Color </ng-container>
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row" [style.color]="row.color"> {{ row.color }} </mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
-    <mat-paginator
-        #paginator
-        [length]="exampleDatabase.data.length"
-        [pageIndex]="0"
-        [pageSize]="25"
-        [pageSizeOptions]="[5, 10, 25, 100]"
-    >
-    </mat-paginator>
+<div class="container col-10">
+    <sg-app-dashboard
+        [cols]="cols"
+        [cardMaxRows]="cardMaxRows"
+        [cards]="cards"
+        (orderChanged)="orderChanged($event)"
+    ></sg-app-dashboard>
 </div>

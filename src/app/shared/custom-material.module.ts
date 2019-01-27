@@ -1,3 +1,5 @@
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { LayoutModule } from "@angular/cdk/layout";
 import { NgModule } from "@angular/core";
 import {
     MatAutocompleteModule,
@@ -27,6 +29,8 @@ import {
 
 @NgModule({
     imports: [
+        DragDropModule,
+        LayoutModule,
         MatAutocompleteModule,
         MatButtonModule,
         MatCardModule,
@@ -52,6 +56,8 @@ import {
         MatTooltipModule
     ],
     exports: [
+        DragDropModule,
+        LayoutModule,
         MatAutocompleteModule,
         MatButtonModule,
         MatCardModule,

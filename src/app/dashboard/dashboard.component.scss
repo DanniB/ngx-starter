@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    margin: 10px;
+
+    .dashboard-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .cdk-drop-list {
+        height: 100%;
+        width: 100%;
+    }
+
+    .cdk-drag-preview {
+        box-sizing: border-box;
+        opacity: 0.5;
+    }
+
+    .cdk-drag-animating {
+        transition: unset;
+    }
+
+    .cdk-drag-placeholder {
+        display: none;
+    }
+}

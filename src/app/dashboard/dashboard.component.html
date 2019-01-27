@@ -1,0 +1,25 @@
+<mat-grid-list [cols]="cols" rowHeight="1:1" gutterSize="20px">
+    <mat-grid-tile
+        *ngFor="let card of cards; let i = index"
+        [colspan]="card.cols | min: cols"
+        [rowspan]="card.rows | min: cardMaxRows"
+    >
+        <cdk-drop-list [cdkDropListConnectedTo]="drops" [cdkDropListData]="i">
+            <mat-card
+                cdkDrag
+                (cdkDragEntered)="entered($event)"
+                [cdkDragData]="i"
+                class="dashboard-card"
+                [style.backgroundColor]="card.color"
+                cdkDragHandle
+            >
+                <mat-icon class="float-right text-white mr-1" style="font-size: 1.25rem">remove</mat-icon>
+                <mat-card-content>
+                    <h5 class="text-white text-nowrap overflow-hidden text-truncate" matTooltip="{{ card.title }}">
+                        {{ card.title }}
+                    </h5>
+                </mat-card-content>
+            </mat-card>
+        </cdk-drop-list>
+    </mat-grid-tile>
+</mat-grid-list>
