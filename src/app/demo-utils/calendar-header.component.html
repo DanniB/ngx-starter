@@ -1,0 +1,67 @@
+<div class="row text-center">
+    <div class="col-md-4">
+        <div class="btn-group">
+            <div
+                class="btn btn-primary"
+                style="font-size: 0.5rem"
+                mwlCalendarPreviousView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                (viewDateChange)="viewDateChange.next(viewDate)"
+            >
+                Vor
+            </div>
+            <div
+                class="btn btn-outline-secondary"
+                style="font-size: 0.5rem"
+                mwlCalendarToday
+                [(viewDate)]="viewDate"
+                (viewDateChange)="viewDateChange.next(viewDate)"
+            >
+                Heute
+            </div>
+            <div
+                class="btn btn-primary"
+                style="font-size: 0.5rem"
+                mwlCalendarNextView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                (viewDateChange)="viewDateChange.next(viewDate)"
+            >
+                Zurück
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h6>{{ viewDate | calendarDate: view + "ViewTitle":locale }}</h6>
+    </div>
+    <div class="col-md-4">
+        <div class="btn-group">
+            <div
+                class="btn btn-primary"
+                style="font-size: 0.5rem"
+                (click)="viewChange.emit('month')"
+                [class.active]="view === 'month'"
+            >
+                Monat
+            </div>
+            <div
+                class="btn btn-primary"
+                style="font-size: 0.5rem"
+                (click)="viewChange.emit('week')"
+                [class.active]="view === 'week'"
+            >
+                Woche
+            </div>
+            <div
+                class="btn btn-primary"
+                style="font-size: 0.5rem"
+                (click)="viewChange.emit('day')"
+                [class.active]="view === 'day'"
+            >
+                Tag
+            </div>
+        </div>
+    </div>
+</div>
+<br />

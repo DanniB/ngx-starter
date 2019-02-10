@@ -22,3 +22,73 @@
         (orderChanged)="orderChanged($event)"
     ></sg-app-dashboard>
 </div>
+
+<div class="offset-1 col-10 my-5 boundary">
+    <mat-grid-list cols="7" rowHeight="2:1">
+        <mat-grid-tile
+            *ngFor="let number of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]"
+        ></mat-grid-tile>
+        <mat-card cdkDrag cdkDragBoundary=".boundary" class="bg-primary text-white text-center" style="width:6rem"
+            >Zeitfenster</mat-card
+        >
+    </mat-grid-list>
+</div>
+
+<div class="offset-1 col-10 row">
+    <div class="col-md-3">
+        <div class="card" mwlDroppable (drop)="externalDrop($event.dropData.event)" dragOverClass="drag-over">
+            <div class="card-body">
+                <p *ngIf="externalEvents.length === 0"><em>No events added</em></p>
+                <ul>
+                    <li
+                        *ngFor="let event of externalEvents"
+                        mwlDraggable
+                        [dropData]="{ event: event }"
+                        dragActiveClass="drag-active"
+                    >
+                        <a href="javascript:;" [style.color]="event.color.primary">
+                            {{ event.title }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <sg-mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate"> </sg-mwl-demo-utils-calendar-header>
+
+        <div [ngSwitch]="view">
+            <mwl-calendar-month-view
+                *ngSwitchCase="CalendarView.Month"
+                [viewDate]="viewDate"
+                [locale]="locale"
+                [events]="events"
+                [activeDayIsOpen]="activeDayIsOpen"
+                [refresh]="refresh"
+                (eventTimesChanged)="eventDropped($event)"
+            >
+            </mwl-calendar-month-view>
+            <mwl-calendar-week-view
+                *ngSwitchCase="CalendarView.Week"
+                [viewDate]="viewDate"
+                [locale]="locale"
+                [events]="events"
+                [refresh]="refresh"
+                [snapDraggedEvents]="false"
+                (eventTimesChanged)="eventDropped($event)"
+            >
+            </mwl-calendar-week-view>
+            <mwl-calendar-day-view
+                *ngSwitchCase="CalendarView.Day"
+                [viewDate]="viewDate"
+                [locale]="locale"
+                [events]="events"
+                [refresh]="refresh"
+                [snapDraggedEvents]="false"
+                (eventTimesChanged)="eventDropped($event)"
+            >
+            </mwl-calendar-day-view>
+        </div>
+    </div>
+</div>
