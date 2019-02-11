@@ -43,7 +43,7 @@ export class AppComponent {
 
     externalEvents: CalendarEvent[] = [
         {
-            title: "Event 1",
+            title: "Zeitfenster 1",
             color: colors.yellow,
             start: new Date(),
             draggable: true,
@@ -53,7 +53,7 @@ export class AppComponent {
             }
         },
         {
-            title: "Event 2",
+            title: "Zeitfenster 2",
             color: colors.blue,
             start: new Date(),
             draggable: true,
