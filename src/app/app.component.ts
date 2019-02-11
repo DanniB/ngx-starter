@@ -44,7 +44,7 @@ export class AppComponent {
     externalEvents: CalendarEvent[] = [
         {
             title: "Zeitfenster 1",
-            color: colors.yellow,
+            color: colors.red,
             start: new Date(),
             draggable: true,
             resizable: {

@@ -38,7 +38,7 @@
     <div class="col-md-3">
         <div class="card" mwlDroppable (drop)="externalDrop($event.dropData.event)" dragOverClass="drag-over">
             <div class="card-body">
-                <p *ngIf="externalEvents.length === 0"><em>No events added</em></p>
+                <p *ngIf="externalEvents.length === 0"><em>Keine Zeitfenster verfügbar</em></p>
                 <ul>
                     <li
                         *ngFor="let event of externalEvents"
