@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "esbenp.prettier-vscode",
+        "msjsdiag.debugger-for-chrome",
+        "angular.ng-template",
+        "johnpapa.angular2",
+        "joelday.docthis",
+        "pkief.material-icon-theme",
+        "ecmel.vscode-html-css",
+        "gencer.html-slim-scss-css-class-completion",
+        "stringham.move-ts"
+    ],
+    "unwantedRecommendations": []
+}
