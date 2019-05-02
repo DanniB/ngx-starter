@@ -1,7 +1,7 @@
 {
     "rulesDirectory": ["node_modules/codelyzer"],
     "rules": {
-        // Angular 2 Codelyzer Standard Regeln
+        // Angular Codelyzer Standard Regeln
         "component-class-suffix": true,
         "component-max-inline-declarations": true,
         "component-selector": [true, "element", "sg", "kebab-case"],
