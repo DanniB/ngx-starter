@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
-import { ButtonModule, DataTableModule, SharedModule } from "primeng/primeng";
+import { ButtonModule, SharedModule } from "primeng/primeng";
+import { TableModule } from "primeng/table";
 
 @NgModule({
-    imports: [ButtonModule, DataTableModule, SharedModule],
-    exports: [ButtonModule, DataTableModule, SharedModule]
+    imports: [ButtonModule, TableModule, SharedModule],
+    exports: [ButtonModule, TableModule, SharedModule]
 })
 export class CustomPrimengModule {}
