@@ -19,18 +19,18 @@ import { DragAndDropModule } from "angular-draggable-droppable";
         }),
         CustomBootstrapModule,
         CustomClarityModule,
-        // TODO:fix CustomCovalentModule,
+        CustomCovalentModule,
         CustomMaterialModule,
-        CustomPrimengModule,
+        // TODO Fix: CustomPrimengModule,
         DragAndDropModule
     ],
     exports: [
         CalendarModule,
         CustomBootstrapModule,
         CustomClarityModule,
-        // TODO:fix CustomCovalentModule,
+        CustomCovalentModule,
         CustomMaterialModule,
-        CustomPrimengModule,
+        // TODO Fix: CustomPrimengModule,
         DragAndDropModule
     ]
 })
