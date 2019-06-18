@@ -97,8 +97,6 @@
         "no-switch-case-fall-through": true,
         // Keine unbenutzten Ausdrücke
         "no-unused-expression": true,
-        // Keine Nutzung von Variablen bevor sie deklariert wurden
-        "no-use-before-declare": true,
         // Verbietet Nutzung von var (forciert let, const)
         "no-var-keyword": true,
         // Verbietet Nutzung von requires (forciert ES6 imports)
