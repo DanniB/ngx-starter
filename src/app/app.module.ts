@@ -3,11 +3,11 @@ import localeDE from "@angular/common/locales/de";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { CoreModule } from "./core/core.module";
 import { MinPipe } from "./core/min.pipe";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 import { DemoUtilsModule } from "./demo-utils/demo-utils";
 import { SharedModule } from "./shared/shared.module";
-import { CoreModule } from "./core/core.module";
 
 registerLocaleData(localeDE);
 

@@ -11,9 +11,9 @@ import { CustomPrimengModule } from "./custom-primeng.module";
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faSlack } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import { DragAndDropModule } from "angular-draggable-droppable";
 
