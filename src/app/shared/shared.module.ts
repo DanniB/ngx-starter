@@ -9,6 +9,12 @@ import { CustomCovalentModule } from "./custom-covalent.module";
 import { CustomMaterialModule } from "./custom-material.module";
 import { CustomPrimengModule } from "./custom-primeng.module";
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faSlack } from "@fortawesome/free-brands-svg-icons";
+import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
+
 import { DragAndDropModule } from "angular-draggable-droppable";
 
 @NgModule({
@@ -22,7 +28,8 @@ import { DragAndDropModule } from "angular-draggable-droppable";
         CustomCovalentModule,
         CustomMaterialModule,
         // TODO Fix: CustomPrimengModule,
-        DragAndDropModule
+        DragAndDropModule,
+        FontAwesomeModule
     ],
     exports: [
         CalendarModule,
@@ -31,7 +38,15 @@ import { DragAndDropModule } from "angular-draggable-droppable";
         CustomCovalentModule,
         CustomMaterialModule,
         // TODO Fix: CustomPrimengModule,
-        DragAndDropModule
+        DragAndDropModule,
+        FontAwesomeModule
     ]
 })
-export class SharedModule {}
+export class SharedModule {
+    constructor() {
+        // Add an icon to the library for convenient access in other components
+        library.add(faCoffee);
+        library.add(faFilePdf);
+        library.add(faSlack);
+    }
+}
