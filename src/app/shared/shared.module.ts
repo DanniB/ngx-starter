@@ -5,7 +5,7 @@ import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 
 import { CustomBootstrapModule } from "./custom-bootstrap.module";
 import { CustomClarityModule } from "./custom-clarity.module";
-import { CustomCovalentModule } from "./custom-covalent.module";
+
 import { CustomMaterialModule } from "./custom-material.module";
 import { CustomPrimengModule } from "./custom-primeng.module";
 
@@ -25,9 +25,9 @@ import { DragAndDropModule } from "angular-draggable-droppable";
         }),
         CustomBootstrapModule,
         CustomClarityModule,
-        CustomCovalentModule,
+
         CustomMaterialModule,
-        // TODO Fix: CustomPrimengModule,
+        CustomPrimengModule,
         DragAndDropModule,
         FontAwesomeModule
     ],
@@ -35,9 +35,8 @@ import { DragAndDropModule } from "angular-draggable-droppable";
         CalendarModule,
         CustomBootstrapModule,
         CustomClarityModule,
-        CustomCovalentModule,
         CustomMaterialModule,
-        // TODO Fix: CustomPrimengModule,
+        CustomPrimengModule,
         DragAndDropModule,
         FontAwesomeModule
     ]
