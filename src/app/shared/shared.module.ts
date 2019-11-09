@@ -7,7 +7,6 @@ import { CustomBootstrapModule } from "./custom-bootstrap.module";
 import { CustomClarityModule } from "./custom-clarity.module";
 
 import { CustomMaterialModule } from "./custom-material.module";
-import { CustomPrimengModule } from "./custom-primeng.module";
 
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -25,9 +24,7 @@ import { DragAndDropModule } from "angular-draggable-droppable";
         }),
         CustomBootstrapModule,
         CustomClarityModule,
-
         CustomMaterialModule,
-        CustomPrimengModule,
         DragAndDropModule,
         FontAwesomeModule
     ],
@@ -36,7 +33,6 @@ import { DragAndDropModule } from "angular-draggable-droppable";
         CustomBootstrapModule,
         CustomClarityModule,
         CustomMaterialModule,
-        CustomPrimengModule,
         DragAndDropModule,
         FontAwesomeModule
     ]
