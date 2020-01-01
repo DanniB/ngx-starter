@@ -10,6 +10,6 @@ module.exports = {
         project: "tsconfig.json",
         sourceType: "module"
     },
-    plugins: ["@typescript-eslint", "@typescript-eslint/tslint"],
-    rules: {}
+    plugins: ["@typescript-eslint", "@typescript-eslint/tslint", "prettier"],
+    rules: { "prettier/prettier": ["error"] }
 };
